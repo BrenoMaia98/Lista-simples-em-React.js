@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+}
+.espacamentoBotao {
+  margin-left: 3rem;
+}
