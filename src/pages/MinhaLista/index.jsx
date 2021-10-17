@@ -1,8 +1,6 @@
 import React, { useCallback, useState } from "react";
-import Botao from "../../components/Botao";
-import CampoDeTexto from "../../components/CampoDeTexto";
 import CampoDeTextoComBotao from "../../components/CampoDeTextoComBotao";
-import Lista from "../../components/Lista/Lista";
+import Lista from "../../components/Lista";
 import "./styles.css";
 
 const MinhaLista = () => {
@@ -29,15 +27,11 @@ const MinhaLista = () => {
 
   const funcaoRemoverUmItemDaLista = useCallback(
     (indiceDaLista, indiceDoItem) => {
-      setListas((listas) => {
-        const novaLista = [...listas];
-        novaLista[indiceDaLista].items = novaLista[indiceDaLista].items.filter(
-          (_, index) => index !== indiceDoItem
-        );
-        return novaLista;
-      });
+      const novaLista = [...listas];
+      novaLista[indiceDaLista].items.splice(indiceDoItem, 1);
+      setListas(novaLista);
     },
-    []
+    [listas]
   );
 
   const funcaoDeletarLista = useCallback((indexParaDeletar) => {

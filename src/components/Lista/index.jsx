@@ -1,5 +1,7 @@
 import React from "react";
+import Botao from "../Botao";
 import CampoDeTextoComBotao from "../CampoDeTextoComBotao";
+import ItemDaLista from "./ItemDaLista";
 import "./styles.css";
 
 const Lista = ({
@@ -10,24 +12,20 @@ const Lista = ({
   removerUmItemDaListaPeloIndice,
 }) => {
   return (
-    <>
+    <div className="conteudoLista">
       <div style={{ display: "flex" }}>
-        <h3>{titulo}</h3>
-
-        <button type="button" onClick={() => deletarEstaLista()}>
-          Deletar lista
-        </button>
+        <h3 className="tituloDaLista">{titulo}</h3>
+        <Botao
+          acaoClicar={deletarEstaLista}
+          texto="Deletar Lista"
+          tipoHiperlink
+        />
       </div>
       {items.map((textoDoItem, indice) => (
-        <div className="itemLista">
-          <p>{textoDoItem}</p>
-          <button
-            type="button"
-            onClick={() => removerUmItemDaListaPeloIndice(indice)}
-          >
-            Remover
-          </button>
-        </div>
+        <ItemDaLista
+          textoDoItem={textoDoItem}
+          removerEsteItem={() => removerUmItemDaListaPeloIndice(indice)}
+        />
       ))}
       <CampoDeTextoComBotao
         acaoDoBotao={(tituloDoNovoItem) => {
@@ -35,7 +33,7 @@ const Lista = ({
         }}
         tituloBotao={"Adicionar Item"}
       />
-    </>
+    </div>
   );
 };
 

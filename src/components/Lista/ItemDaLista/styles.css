@@ -1,0 +1,14 @@
+.itemLista {
+  display: flex;
+  align-items: center;
+
+  margin: 1rem 0px;
+}
+
+.caixaDeSelecao {
+  transform: scale(1.5);
+}
+
+.textoDoItem {
+  padding: 0px 1.5rem;
+}

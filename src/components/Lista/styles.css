@@ -1,3 +1,7 @@
-.itemLista {
-  display: flex;
+.conteudoLista {
+  margin: 3rem 0px;
+}
+
+.tituloDaLista {
+  margin-right: 2rem;
 }
