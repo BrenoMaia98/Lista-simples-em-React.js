@@ -1,4 +1,16 @@
-.botao-primario {
+.botaoHiperlink {
+  /* font-weight: 600; */
+  font-size: 1rem;
+  font-family: sans-serif;
+  text-decoration: underline;
+  color: #414bb2;
+
+  background-color: rgba(0, 0, 0, 0);
+
+  cursor: pointer;
+}
+
+.botaoPrimario {
   /* font-weight: 600; */
   font-size: 1.5rem;
   font-family: sans-serif;
@@ -9,4 +21,6 @@
 
   border-radius: 0.35rem;
   padding: 0.75rem 1.5rem;
+
+  cursor: pointer;
 }
